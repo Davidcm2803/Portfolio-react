@@ -147,7 +147,7 @@ export const ProjectsSection=() =>{
 
         <div className="text-center">
           <a
-            href="https://github.com/Davidcm2803"
+            href="https://github.com/Davidcm2803?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
             className="cosmic-button w-fit flex items-center mx-auto gap-2 group"
