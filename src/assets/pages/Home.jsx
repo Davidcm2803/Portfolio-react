@@ -1,4 +1,6 @@
 import { AboutMe } from "../../components/AboutMe";
+import { ContactSection } from "../../components/ContactSection";
+import { Footer } from "../../components/Footer";
 import { HeroSection } from "../../components/HeroSection";
 import { MySkill } from "../../components/MySkills";
 import { Navbar } from "../../components/Navbar";
@@ -22,7 +24,9 @@ export const Home = () => {
         <AboutMe />
         <MySkill/>
         <ProjectsSection/>
+        <ContactSection/>
       </main>
+      <Footer/>
     </div>
   );
 };

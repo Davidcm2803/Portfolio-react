@@ -5,7 +5,8 @@ const projects = [
   {
     id: 1,
     title: "Sneaker Ecommerce",
-    description: "Shoe Ecommerce using .NET",
+    description:
+      "E-commerce application built with .NET for managing sneaker products, orders, and users.",
     image: "/projects/sneaker.jpg",
     tags: [".Net Core", "C#", "SQL Server"],
     githubUrl: "https://github.com/Davidcm2803/Shoe-Eccomerce.git",
@@ -14,7 +15,7 @@ const projects = [
     id: 2,
     title: "Parking App",
     description:
-      "Parking app developed for our university to streamline vehicle access and save time for students and staff.",
+      "University parking management system built with .NET to control vehicle access and optimize parking operations.",
     image: "/projects/Parqueo.png",
     tags: [".Net Framework", "C#", "MYSQL"],
     githubUrl: "https://github.com/Davidcm2803/Ulacit-parking.git",
@@ -23,7 +24,7 @@ const projects = [
     id: 3,
     title: "Tourism App",
     description:
-      "Ecommerce create for tourism on San Jose City.",
+      "Tourism e-commerce web app for San José City with online payments and real-time data storage.",
     image: "/projects/turismo.png",
     tags: ["HTML", "CSS", "Stripe", "Firebase", "JavaScript"],
     demoUrl: "https://turism-app.vercel.app/",
@@ -33,13 +34,41 @@ const projects = [
     id: 4,
     title: "Todo List for Phone",
     description:
-      "A simple app to organize and keep track of tasks, helping you stay productive and manage your daily to-dos efficiently.",
+      "Task management web app designed to organize daily activities and improve productivity.",
     image: "/projects/todo.jpg",
-    tags: ["HTML", "CSS", "Stripe", "JavaScript"],
+    tags: ["HTML", "CSS", "JavaScript"],
     demoUrl: "https://todo-list-test-lemon.vercel.app/",
     githubUrl: "https://github.com/Davidcm2803/todo-list-test",
   },
+  {
+    id: 5,
+    title: "Bet App with C#",
+    description:
+      "Dynamic sports betting application built with ASP.NET Core (.NET 9) consuming sports data via a RESTful API, tested with Postman.",
+    image: "/projects/apuestas.jpg",
+    tags: [".Net Core", "C#", "JavaScript", "MYSQL", "AWS"],
+    githubUrl: "https://github.com/Davidcm2803/Proyecto_Apuestas",
+  },
+  {
+    id: 6,
+    title: "Python Projects",
+    description:
+      "Collection of Python projects focused on automation, data processing, and problem solving.",
+    image: "/projects/python.jpg",
+    tags: ["Python"],
+    githubUrl: "https://github.com/Davidcm2803/Python-projects",
+  },
+{
+  id: 7,
+  title: "Snake Game",
+  description:
+    "Classic arcade-style Snake game built with Python using Tkinter for the graphical interface, featuring score tracking and sound effects.",
+  image: "/projects/snake.jpg",
+  tags: ["Python", "Tkinter", "Game Development"],
+  githubUrl: "https://github.com/Davidcm2803/Snake_Python",
+},
 ];
+
 
 export const ProjectsSection=() =>{
   const [hoveredId, setHoveredId] = useState(null);
