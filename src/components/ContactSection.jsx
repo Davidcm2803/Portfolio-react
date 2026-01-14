@@ -2,49 +2,65 @@ import {
   Instagram,
   Linkedin,
   Mail,
-  MapPin,
   Phone,
   Send,
-  Twitch,
-  Twitter,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 export const ContactSection = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const formRef = useRef();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    setTimeout(() => {
-      toast({
-        title: "Message sent!",
-        description: "Thank you for your message. I'll get back to you soon.",
-      });
-      setIsSubmitting(false);
-    }, 1500);
+    emailjs.sendForm(
+  "service_m5n6eef",   
+  "template_ggcv59b",    
+  formRef.current,        
+  "4536tFSebj3pPWoVA" 
+)
+.then(
+  (result) => {
+    console.log("Email sent:", result.text);
+    toast({
+      title: "Message sent!",
+      description: "Thank you for your message. I'll get back to you soon.",
+    });
+    formRef.current.reset();
+    setIsSubmitting(false);
+  },
+  (error) => {
+    console.error("Email error:", error.text);
+    toast({
+      title: "Error",
+      description: "Failed to send message. Please try again.",
+    });
+    setIsSubmitting(false);
+  }
+);
   };
 
   return (
     <section id="contact" className="py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-          Get In <span className="text-primary"> Touch</span>
+          Get In <span className="text-primary">Touch</span>
         </h2>
 
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
           Have a project in mind or want to collaborate? Feel free to reach out.
-          I'm always open to discussing new opportunities.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 flex flex-col items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* CONTACT INFO */}
           <div className="space-y-8">
-            <h3 className="text-2xl font-semibold mb-6">
+            <h3 className="text-2xl font-semibold mb-6 text-center">
               Contact Information
             </h3>
 
@@ -81,12 +97,20 @@ export const ContactSection = () => {
             </div>
 
             <div className="pt-8">
-              <h4 className="font-medium mb-4">Connect With Me</h4>
+              <h4 className="font-medium mb-4 text-center">
+                Connect With Me
+              </h4>
               <div className="flex space-x-4 justify-center">
-                <a href="https://www.linkedin.com/in/davidcastillom2803/" target="_blank">
+                <a
+                  href="https://www.linkedin.com/in/davidcastillom2803/"
+                  target="_blank"
+                >
                   <Linkedin />
                 </a>
-                <a href="https://www.instagram.com/dxxcast28/" target="_blank">
+                <a
+                  href="https://www.instagram.com/dxxcast28/"
+                  target="_blank"
+                >
                   <Instagram />
                 </a>
               </div>
@@ -95,56 +119,46 @@ export const ContactSection = () => {
 
           {/* FORM */}
           <div className="bg-card p-8 rounded-lg shadow-xs">
-            <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
+            <h3 className="text-2xl font-semibold mb-6">
+              Send a Message
+            </h3>
 
-            <form className="space-y-6" onSubmit={handleSubmit}>
+            <form ref={formRef} className="space-y-6" onSubmit={handleSubmit}>
               <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium mb-2"
-                >
+                <label className="block text-sm font-medium mb-2">
                   Your Name
                 </label>
                 <input
                   type="text"
-                  id="name"
                   name="name"
                   required
-                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
-                  placeholder="John Pork"
+                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:ring-2 focus:ring-primary"
+                  placeholder="David Castillo"
                 />
               </div>
 
               <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium mb-2"
-                >
+                <label className="block text-sm font-medium mb-2">
                   Your Email
                 </label>
                 <input
                   type="email"
-                  id="email"
                   name="email"
                   required
-                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
-                  placeholder="jhonpork@gmail.com"
+                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:ring-2 focus:ring-primary"
+                  placeholder="example@email.com"
                 />
               </div>
 
               <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium mb-2"
-                >
+                <label className="block text-sm font-medium mb-2">
                   Your Message
                 </label>
                 <textarea
-                  id="message"
                   name="message"
+                  rows={4}
                   required
-                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary resize-none"
-                  placeholder="Hello, I'd like to talk about..."
+                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:ring-2 focus:ring-primary resize-none"
                 />
               </div>
 
