@@ -2,7 +2,7 @@ import { AboutMe } from "../../components/AboutMe";
 import { ContactSection } from "../../components/ContactSection";
 import { Footer } from "../../components/Footer";
 import { HeroSection } from "../../components/HeroSection";
-import { MySkill } from "../../components/MySkills";
+import { MySkill } from "../../components/Myskills";
 import { Navbar } from "../../components/Navbar";
 import { ProjectsSection } from "../../components/ProjectsSection";
 import { ThemeToggle } from "../../components/ThemeToggle";
