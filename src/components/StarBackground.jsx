@@ -20,8 +20,6 @@ export const StarBackground = () => {
 
   const generateStars = () => {
   const area = window.innerWidth * window.innerHeight;
-
-  // densidad realista para fondo tech
   const numberOfStars = Math.floor(area / 45000);
 
   const newStars = [];
@@ -35,8 +33,8 @@ export const StarBackground = () => {
       id: i,
       Icon,
       size: isSmall
-        ? Math.random() * 12 + 14   // pequeños
-        : Math.random() * 26 + 28,  // grandes
+        ? Math.random() * 12 + 14
+        : Math.random() * 26 + 28,
       x: Math.random() * 100,
       y: Math.random() * 100,
       opacity: isSmall

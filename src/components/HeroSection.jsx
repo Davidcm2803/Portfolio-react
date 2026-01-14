@@ -10,13 +10,13 @@ export const HeroSection = () => {
         <div className="flex flex-col md:flex-row items-center justify-center gap-12">
           {/* Animated Avatar Circle */}
           <div className="relative opacity-0 animate-fade-in">
-            <div className="w-64 h-64 rounded-full bg-gradient-to-br from-primary via-purple-600 to-gray-900 dark:from-primary dark:via-purple-600 dark:to-gray-900 animate-pulse-subtle">
+            <div className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-full bg-gradient-to-br from-primary via-purple-600 to-gray-900 dark:from-primary dark:via-purple-600 dark:to-gray-900 animate-pulse-subtle">
               <div className="absolute inset-2 rounded-full bg-gradient-to-br from-gray-950 to-gray-900 flex items-center justify-center">
                 <div className="text-center">
-                  <div className="text-6xl font-bold bg-gradient-to-r from-primary to-emerald-400 bg-clip-text text-transparent">
+                  <div className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-primary to-emerald-400 bg-clip-text text-transparent">
                     DC
                   </div>
-                  <div className="text-sm text-gray-400 mt-2">Software Dev</div>
+                  <div className="text-xs sm:text-sm text-gray-400 mt-1 sm:mt-2">Software Dev</div>
                 </div>
               </div>
             </div>
@@ -55,7 +55,7 @@ export const HeroSection = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start opacity-0 animate-fade-in-delay-4">
               <button
                 onClick={() => window.open('./assets/David_Resume.pdf')}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-emerald-600 transition-all transform hover:scale-105"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-emerald-600 transition-all transform hover:scale-105"
               >
                 <Download className="w-5 h-5" />
                 Download CV
