@@ -1,7 +1,8 @@
-import { cn } from "@/lib/utils";
+import React, { useState, useEffect } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
-import { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
 
+// Nav items
 const navItems = [
   { name: "Home", href: "#hero" },
   { name: "About", href: "#about" },
@@ -16,25 +17,36 @@ export const Navbar = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    document.body.style.overflow = isMenuOpen ? "hidden" : "";
   }, [isMenuOpen]);
 
+  useEffect(() => {
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme === "dark") {
+      setIsDarkMode(true);
+      document.documentElement.classList.add("dark");
+    } else {
+      setIsDarkMode(false);
+      document.documentElement.classList.remove("dark");
+    }
+  }, []);
+
   const toggleTheme = () => {
-    setIsDarkMode((prev) => !prev);
-    document.documentElement.classList.toggle("dark", !isDarkMode);
+    if (isDarkMode) {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+      setIsDarkMode(false);
+    } else {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+      setIsDarkMode(true);
+    }
   };
 
   return (
@@ -45,15 +57,13 @@ export const Navbar = () => {
       )}
     >
       <div className="container flex items-center justify-between">
-        <a
-          className="text-xl font-bold text-primary flex items-center"
-          href="#hero"
-        >
+        <a className="text-xl font-bold text-primary flex items-center" href="#hero">
           <span className="relative z-10">
-            <span className="text-foreground"> David Castillo </span> Portfolio
+            <span className="text-foreground">David Castillo</span> Portfolio
           </span>
         </a>
 
+        {/* Menú Desktop */}
         <div className="hidden md:flex items-center space-x-8">
           {navItems.map((item, key) => (
             <a
@@ -65,29 +75,22 @@ export const Navbar = () => {
             </a>
           ))}
           <button
-            className="p-2 text-foreground"
             onClick={toggleTheme}
+            className="p-2 text-foreground"
             aria-label="Toggle Theme"
           >
-            {isDarkMode ? (
-              <Sun size={20} className="text-yellow-400" />
-            ) : (
-              <Moon size={20} />
-            )}
+            {isDarkMode ? <Sun size={20} className="text-yellow-400" /> : <Moon size={20} />}
           </button>
         </div>
 
+        {/* Menú Mobile */}
         <div className="flex items-center space-x-2 md:hidden">
           <button
-            className="p-2 text-foreground"
             onClick={toggleTheme}
+            className="p-2 text-foreground"
             aria-label="Toggle Theme"
           >
-            {isDarkMode ? (
-              <Sun size={20} className="text-yellow-400" />
-            ) : (
-              <Moon size={20} />
-            )}
+            {isDarkMode ? <Sun size={20} className="text-yellow-400" /> : <Moon size={20} />}
           </button>
 
           <button
@@ -99,13 +102,12 @@ export const Navbar = () => {
           </button>
         </div>
 
+        {/*Menú Mobile */}
         <div
           className={cn(
             "fixed inset-0 bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center",
             "transition-all duration-300 md:hidden",
-            isMenuOpen
-              ? "opacity-100 pointer-events-auto"
-              : "opacity-0 pointer-events-none"
+            isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
           )}
         >
           <div className="flex flex-col space-y-8 text-xl">
