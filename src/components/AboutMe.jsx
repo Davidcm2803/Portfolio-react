@@ -15,21 +15,21 @@ export const AboutMe = () => {
             </h3>
 
             <p className="text-muted-foreground">
-              Bilingual Technical Support Specialist with 3+ years of experience
-              in high-volume customer service and technical support. Strong
-              background in troubleshooting software and hardware issues while
-              optimizing processes and improving service delivery across global
-              operations.
+              Over 3 years of experience providing high-volume technical support
+              with a strong focus on software troubleshooting and process
+              optimization. Skilled in diagnosing and resolving both hardware
+              and software issues while improving operational workflows across
+              global teams. 
             </p>
 
             <p className="text-muted-foreground">
-              In addition to support responsibilities, I have hands-on
-              experience assisting in small-scale software development
-              initiatives, including internal tools, process automation,
-              documentation, testing, and troubleshooting of internally
-              developed solutions. Currently expanding my skill set in web
-              development using Python, Java, C#, JavaScript, and modern web
-              technologies.
+              Hands-on experience in small-scale software
+              development projects, including building internal tools,
+              automating workflows, testing applications, and debugging code.
+              Proficient in Python, Java, C#, JavaScript, MySQL, React, and
+              Tailwind CSS, with a growing expertise in web development and
+              modern software solutions. Passionate about applying programming
+              skills to create efficient, reliable, and innovative IT solutions.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
