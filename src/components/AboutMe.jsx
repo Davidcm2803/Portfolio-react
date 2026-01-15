@@ -108,7 +108,7 @@ export const AboutMe = () => {
                     Academic Background
                   </h4>
                   <p className="text-sm text-primary font-medium mb-2">
-                    University Studies
+                    University Studies | 2022 - Present
                   </p>
                   <p className="text-muted-foreground text-sm">
                     Built a solid foundation in programming through academic
