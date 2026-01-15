@@ -54,7 +54,7 @@ export const HeroSection = () => {
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start opacity-0 animate-fade-in-delay-4">
               <button
-                onClick={() => window.open('./assets/David_Resume.pdf')}
+                onClick={() => window.open('./David_Resume.pdf')}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-emerald-600 transition-all transform hover:scale-105"
               >
                 <Download className="w-5 h-5" />
