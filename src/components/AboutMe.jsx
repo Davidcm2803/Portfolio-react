@@ -1,4 +1,5 @@
 import { Briefcase, Code, User, Wrench, GraduationCap } from "lucide-react";
+import { Download } from "lucide-react";
 
 export const AboutMe = () => {
   return (
@@ -19,29 +20,30 @@ export const AboutMe = () => {
               with a strong focus on software troubleshooting and process
               optimization. Skilled in diagnosing and resolving both hardware
               and software issues while improving operational workflows across
-              global teams. 
+              global teams.
             </p>
 
             <p className="text-muted-foreground">
-              Hands-on experience in small-scale software
-              development projects, including building internal tools,
-              automating workflows, testing applications, and debugging code.
-              Proficient in Python, Java, C#, JavaScript, MySQL, React, and
-              Tailwind CSS, with a growing expertise in web development and
-              modern software solutions. Passionate about applying programming
-              skills to create efficient, reliable, and innovative IT solutions.
+              Hands-on experience in small-scale software development projects,
+              including building internal tools, automating workflows, testing
+              applications, and debugging code. Proficient in Python, Java, C#,
+              JavaScript, MySQL, React, and Tailwind CSS, with a growing
+              expertise in web development and modern software solutions.
+              Passionate about applying programming skills to create efficient,
+              reliable, and innovative IT solutions.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
               <a href="#contact" className="cosmic-button">
                 Get In Touch
               </a>
-              <a
-                href="/public/David_Resume.pdf"
-                className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
+              <button
+                onClick={() => window.open("/David_Resume.pdf", "_blank")}
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-emerald-600 transition-all transform hover:scale-105"
               >
+                <Download className="w-5 h-5" />
                 Download CV
-              </a>
+              </button>
             </div>
           </div>
 
