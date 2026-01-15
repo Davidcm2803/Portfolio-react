@@ -25,7 +25,7 @@ export const AboutMe = () => {
 
             <p className="text-muted-foreground">
               Hands-on experience in small-scale software development projects,
-              including building internal tools, automating workflows, testing
+              including building internal tools, automating workflows, testing*
               applications, and debugging code. Proficient in Python, Java, C#,
               JavaScript, MySQL, React, and Tailwind CSS, with a growing
               expertise in web development and modern software solutions.
@@ -68,12 +68,12 @@ export const AboutMe = () => {
                     Shyft Global Services | 2022 - Present
                   </p>
                   <p className="text-muted-foreground text-sm">
-                    Back Office Support assisting field engineers and supporting
-                    global service delivery for US, Canada, and Japan. Actively
-                    contributed to internal software initiatives by assisting
-                    with process automation, internal tools, documentation,
-                    testing, and troubleshooting of internally developed
-                    solutions.
+                    Experienced in developing internal tools and automating
+                    processes with Salesforce, C#, and Python, supporting
+                    small-scale app development, workflow optimization, and
+                    process automation. Strong background in network
+                    administration and hardware support, including switches and
+                    Broadcom devices.
                   </p>
                 </div>
               </div>
