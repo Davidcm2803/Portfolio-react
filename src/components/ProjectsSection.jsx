@@ -8,7 +8,7 @@ const projects = [
     description:
       "AI-assisted application security platform: point it at a repo or upload source and it runs static analysis (Bandit, Semgrep-style rule sets) to flag vulnerabilities and bad practices, then an LLM chatbot with RAG lets you ask questions about the findings and get concrete remediation steps grounded in the actual codebase.",
     image: "/projects/QA.png",
-    tags: ["FastAPI", "Python", "Bandit", "Semgrep", "SAST", "RAG", "AI", "Docker", "JWT"],
+    tags: ["FastAPI", "Python", "React", "Vite", "Javascript", "Bandit", "Semgrep", "Osawp Zap", "SAST", "RAG", "AI", "Docker", "JWT" , "MongoDB Atlas"],
     language: "Python",
     demoUrl: "https://waf-code-tester.vercel.app/",
     githubUrl: "https://github.com/Davidcm2803/Code-Review-QA",
@@ -19,7 +19,7 @@ const projects = [
     description:
       "Serverless, cloud-native bus-tracking platform for Costa Rica: FastAPI on AWS Lambda behind API Gateway, a React frontend served through S3 + CloudFront, MongoDB Atlas for data, Firebase Auth, Stripe for payments, and the entire infrastructure provisioned as code with Terraform.",
     image: "/projects/bus.jpg",
-    tags: ["AWS Lambda", "API Gateway", "S3", "CloudFront", "Terraform", "FastAPI", "React", "MongoDB Atlas", "Stripe"],
+    tags: ["AWS Lambda", "API Gateway", "S3", "CloudFront", "Terraform", "FastAPI", "React", "Vite", "Javascript", "MongoDB Atlas", "Stripe"],
     language: "Python",
     demoUrl: "https://d1ybo6ldrc0wgn.cloudfront.net/",
     githubUrl: "https://github.com/Davidcm2803/Ulacit-buses",
@@ -30,7 +30,7 @@ const projects = [
     description:
       "AI-driven quiz platform built around a RAG pipeline: teachers author quizzes and the system generates questions directly from their source material, while students compete live over WebSockets. Two role-based experiences, real-time sockets, delivered on a Scrum cadence.",
     image: "/projects/quiz.jpg",
-    tags: ["React", "Vite", "Python", "FastAPI", "AI", "RAG", "WebSockets", "MongoDB Atlas"],
+    tags: ["React", "Vite", "Javascript", "Python", "FastAPI", "AI", "RAG", "WebSockets", "MongoDB Atlas"],
     language: "Python",
     demoUrl: "https://quiz-proyect-seven.vercel.app/",
     githubUrl: "https://github.com/Davidcm2803/Quiz-proyect",
@@ -41,7 +41,7 @@ const projects = [
     description:
       "Retrieval-Augmented Generation assistant that answers questions strictly from a curated literary library (Project Gutenberg texts) — no hallucinated answers. Weaviate handles vector search and embedding-based semantic retrieval behind a conversational interface.",
     image: "/projects/bot-literario.png",
-    tags: ["React", "Vite", "Python", "Flask", "Weaviate", "RAG", "Vector Search", "AI"],
+    tags: ["React", "Vite", "Javascript", "Python", "Flask", "Weaviate", "RAG", "Vector Search", "AI"],
     language: "Python",
     demoUrl: "https://bot-literario.vercel.app/",
     githubUrl: "https://github.com/Davidcm2803/bot-literario",
@@ -62,7 +62,7 @@ const projects = [
     description:
       "Dynamic sports betting application built with ASP.NET Core (.NET 9), consuming live sports data from TheSportsDB REST API, running on a MySQL backend with C#, and tested end-to-end with Postman.",
     image: "/projects/apuestas.jpg",
-    tags: [".NET Core", "C#", "TheSportsDB API", "MySQL", "AWS"],
+    tags: [".NET Core","MVC Architecture", "C#", "Javascript", "TheSportsDB API", "MySQL", "AWS"],
     language: "C#",
     githubUrl: "https://github.com/Davidcm2803/Proyecto_Apuestas",
   },
@@ -82,7 +82,7 @@ const projects = [
     description:
       "University parking management system built with .NET to control vehicle access and optimize parking operations.",
     image: "/projects/Parqueo.png",
-    tags: [".NET Framework", "C#", "MySQL"],
+    tags: [".NET Framework", "MVC Architecture", "C#", "Javascript", "MySQL"],
     language: "C#",
     githubUrl: "https://github.com/Davidcm2803/Ulacit-parking.git",
   },

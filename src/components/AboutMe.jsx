@@ -12,7 +12,7 @@ export const AboutMe = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
           <div className="space-y-6">
             <h3 className="text-xl sm:text-2xl font-semibold">
-              Technical Support Specialist & AI-Driven Software Engineer
+              Bilingual Full Stack Developer & AI Engineer | +3 years experience
             </h3>
 
             <p className="text-muted-foreground text-sm sm:text-base">
