@@ -54,6 +54,7 @@ const projects = [
     image: "/projects/sneaker.jpg",
     tags: [".NET Core", "C#", "SQL Server"],
     language: "C#",
+    demoUrl: "https://shoeystore.runasp.net/",
     githubUrl: "https://github.com/Davidcm2803/Shoe-Eccomerce.git",
   },
   {
