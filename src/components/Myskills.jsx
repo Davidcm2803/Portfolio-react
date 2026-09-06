@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Code2, Database, Wrench, GraduationCap } from "lucide-react";
+import { Code2, Database, Wrench, Cloud, Brain, ShieldAlert } from "lucide-react";
 
 export const MySkill = () => {
   const [selected, setSelected] = useState("all");
@@ -9,7 +9,9 @@ export const MySkill = () => {
       { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
       { name: "HTML", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
       { name: "CSS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
-      { name: "JavaScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" }
+      { name: "JavaScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+      { name: "Angular", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg" },
+      { name: "Tailwind", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" }
     ],
     backend: [
       { name: "Python", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
@@ -22,19 +24,49 @@ export const MySkill = () => {
       { name: "Firebase", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" },
       { name: "Oracle", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" }
     ],
-    learning: [
-      { name: "Angular", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" },
-      { name: "Tailwind", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
-      { name: "Data Science", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"},
-      { name: "Applied AI", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"}
+    cloud: [
+      { name: "AWS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
+      { name: "Terraform", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" },
+      { name: "Docker", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
+      { name: "MongoDB Atlas", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+      { name: "Kubernetes", logo: "https://cdn.simpleicons.org/kubernetes" }
+    ],
+    ai: [
+      { name: "RAG Pipelines", logo: "https://cdn.simpleicons.org/langchain" },
+      { name: "LLM APIs", logo: "https://cdn.simpleicons.org/anthropic" },
+      { name: "Vector Databases", logo: "https://cdn.simpleicons.org/qdrant" },
+      { name: "Data Science", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+      { name: "Applied AI", logo: "https://cdn.simpleicons.org/tensorflow" }
+    ],
+    security: [
+      { name: "Kali Linux", logo: "https://cdn.simpleicons.org/kalilinux" },
+      { name: "Ethical Hacking", logo: "https://cdn.simpleicons.org/hackthebox" },
+      { name: "Web App Firewalls", logo: "https://cdn.simpleicons.org/cloudflare" },
+      { name: "Network & MITM Analysis", logo: "https://cdn.simpleicons.org/wireshark" },
+      { name: "SAST (Semgrep/Bandit)", logo: "https://cdn.simpleicons.org/owasp" }
     ],
     tools: [
       { name: "Git", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
       { name: "GitHub", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
+      { name: "GitHub Actions", logo: "https://cdn.simpleicons.org/githubactions" },
       { name: "VS Code", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
+      { name: "Jest", logo: "https://cdn.simpleicons.org/jest" },
+      { name: "JUnit5", logo: "https://cdn.simpleicons.org/junit5" },
+      { name: "Pytest", logo: "https://cdn.simpleicons.org/pytest" },
+      { name: "Selenium", logo: "https://cdn.simpleicons.org/selenium" },
+      { name: "Cypress", logo: "https://cdn.simpleicons.org/cypress" },
       { name: "WordPress", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" }
     ]
   };
+
+  const categories = [
+    { key: "frontend", label: "Frontend", icon: Code2 },
+    { key: "backend", label: "Backend", icon: Database },
+    { key: "cloud", label: "Cloud & DevOps", icon: Cloud },
+    { key: "ai", label: "AI & Data", icon: Brain },
+    { key: "security", label: "Security", icon: ShieldAlert },
+    { key: "tools", label: "Tools", icon: Wrench }
+  ];
 
   const TechCard = ({ title, technologies, icon: Icon }) => (
     <div className="group relative bg-card rounded-2xl p-6 overflow-hidden transition-all duration-500 hover:scale-105 shadow-lg hover:shadow-2xl border border-border">
@@ -82,13 +114,7 @@ export const MySkill = () => {
 
         <div className="flex justify-center mb-12 px-2">
           <div className="flex flex-wrap justify-center gap-2 bg-card rounded-2xl p-2 border border-border max-w-full">
-            {[
-              { key: "all", label: "All" },
-              { key: "frontend", label: "Frontend" },
-              { key: "backend", label: "Backend" },
-              { key: "learning", label: "Learning" },
-              { key: "tools", label: "Tools" }
-            ].map(tab => (
+            {[{ key: "all", label: "All" }, ...categories.map(({ key, label }) => ({ key, label }))].map((tab) => (
               <button
                 key={tab.key}
                 onClick={() => setSelected(tab.key)}
@@ -105,25 +131,21 @@ export const MySkill = () => {
         </div>
 
         {selected === "all" && (
-          <>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-              <TechCard title="Frontend" technologies={techStack.frontend} icon={Code2} />
-              <TechCard title="Backend" technologies={techStack.backend} icon={Database} />
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <TechCard title="Aprendiendo" technologies={techStack.learning} icon={GraduationCap} />
-              <TechCard title="Herramientas" technologies={techStack.tools} icon={Wrench} />
-            </div>
-          </>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {categories.map(({ key, label, icon }) => (
+              <TechCard key={key} title={label} technologies={techStack[key]} icon={icon} />
+            ))}
+          </div>
         )}
 
         {selected !== "all" && (
           <div className="flex justify-center">
             <div className="w-full md:w-1/2">
-              {selected === "frontend" && <TechCard title="Frontend" technologies={techStack.frontend} icon={Code2} />}
-              {selected === "backend" && <TechCard title="Backend" technologies={techStack.backend} icon={Database} />}
-              {selected === "learning" && <TechCard title="Aprendiendo" technologies={techStack.learning} icon={GraduationCap} />}
-              {selected === "tools" && <TechCard title="Herramientas" technologies={techStack.tools} icon={Wrench} />}
+              {categories
+                .filter((c) => c.key === selected)
+                .map(({ key, label, icon }) => (
+                  <TechCard key={key} title={label} technologies={techStack[key]} icon={icon} />
+                ))}
             </div>
           </div>
         )}
