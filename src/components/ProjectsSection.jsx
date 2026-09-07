@@ -138,7 +138,7 @@ const ProjectCard = ({ project, index }) => {
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="group bg-card rounded-lg overflow-hidden shadow-md transition-all duration-500 hover:shadow-xl hover:-translate-y-1 relative"
+      className="group bg-card rounded-lg overflow-hidden shadow-md transition-all duration-500 hover:shadow-xl hover:-translate-y-1 relative flex flex-col"
       style={{
         animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`,
       }}
@@ -150,34 +150,10 @@ const ProjectCard = ({ project, index }) => {
           alt={project.title}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
-
-        {/* Floating action buttons */}
-        <div className="absolute top-4 right-4 z-20 flex gap-2 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">
-          {project.demoUrl && (
-            <a
-              href={project.demoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2.5 bg-card rounded-lg shadow-lg hover:scale-110 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-            >
-              <ExternalLink size={18} />
-            </a>
-          )}
-          {project.githubUrl && (
-            <a
-              href={project.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2.5 bg-card rounded-lg shadow-lg hover:scale-110 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-            >
-              <Github size={18} />
-            </a>
-          )}
-        </div>
       </div>
 
       {/* Project Info */}
-      <div className="p-5 space-y-3">
+      <div className="p-5 space-y-3 flex flex-col flex-1">
         <h3 className="text-xl font-bold transition-colors duration-300 group-hover:text-primary">
           {project.title}
         </h3>
@@ -203,8 +179,39 @@ const ProjectCard = ({ project, index }) => {
           ))}
         </div>
 
+        {/* Spacer to push buttons/progress bar to bottom */}
+        <div className="flex-1" />
+
+        {/* Action buttons - fila fija, siempre visibles */}
+        <div className="flex gap-2 pt-1">
+          {project.demoUrl && (
+            <a
+              href={project.demoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 text-sm font-medium bg-primary text-white rounded-lg shadow-sm hover:opacity-90 hover:scale-[1.02] transition-all duration-300"
+            >
+              <ExternalLink size={16} />
+              Live Demo
+            </a>
+          )}
+          {project.githubUrl && (
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`flex items-center justify-center gap-1.5 px-3 py-2 text-sm font-medium border border-border rounded-lg hover:border-primary hover:bg-primary/10 hover:scale-[1.02] transition-all duration-300 ${
+                project.demoUrl ? "flex-1" : "w-full"
+              }`}
+            >
+              <Github size={16} />
+              GitHub
+            </a>
+          )}
+        </div>
+
         {/* Progress bar indicator */}
-        <div className="pt-2">
+        <div className="pt-1">
           <div className="h-0.5 w-full bg-border rounded-full overflow-hidden">
             <div
               className="h-full rounded-full bg-primary transition-all duration-700 ease-out"
